@@ -7,11 +7,13 @@ public class PlayerManager : MonoBehaviour
     public static PlayerManager Instance { get; private set; }
     //Player Game Object
     public GameObject player;
+    public Rigidbody RigidBody;
     //PlayerScripts
-    InputManager inputManager;
+    public InputManager inputManager;
     PlayerLocomotion locomotionPlayer;
     //Player Stats
     public float MovementSpeed;
+    [Range(0, 100)]
     public float RotationSpeed;
 
     // Start is called before the first frame update
@@ -22,6 +24,7 @@ public class PlayerManager : MonoBehaviour
         else{Instance = this;}
         inputManager = player.GetComponent<InputManager>();
         locomotionPlayer = player.GetComponent<PlayerLocomotion>();
+        RigidBody = player.GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame

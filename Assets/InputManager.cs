@@ -5,7 +5,7 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     private PlayerControls playerControls;
-    public Vector2 MovementInput;
+    private Vector2 MovementInput;
     public float VerticalInput;
     public float HorizontalInput;
 

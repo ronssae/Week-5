@@ -1,18 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerLocomotion : MonoBehaviour
 {
-    private InputManager inputManager;
     private Vector3 PlayerDirection;
-    private Rigidbody PlayerRigidBody;
     private Transform CameraObject;
 
     private void Awake()
     {
-        inputManager = GetComponent<InputManager>();
-        PlayerRigidBody = GetComponent<Rigidbody>();
         CameraObject = Camera.main.transform;
     }
 
@@ -23,12 +20,27 @@ public class PlayerLocomotion : MonoBehaviour
         HandleRotation();
     }
 
-    private void HandleMovement()
+    public void HandleMovement()
     {
-
+        PlayerDirection = CameraObject.forward * PlayerManager.Instance.inputManager.VerticalInput;
+        PlayerDirection = PlayerDirection + CameraObject.right * PlayerManager.Instance.inputManager.HorizontalInput;
+        PlayerDirection.Normalize();
+        PlayerDirection.y = 0;
+        PlayerDirection *= PlayerManager.Instance.MovementSpeed;
+        Vector3 MovementVelocity = PlayerDirection;
+        PlayerManager.Instance.RigidBody.velocity = MovementVelocity;
     }
     private void HandleRotation()
     {
+        Vector3 TargetDirection = Vector3.zero;
+        TargetDirection = CameraObject.forward * PlayerManager.Instance.inputManager.VerticalInput;
+        TargetDirection = PlayerDirection + CameraObject.right * PlayerManager.Instance.inputManager.HorizontalInput;
+        TargetDirection.Normalize();
+        TargetDirection.y = 0;
 
+        Quaternion TargetRotation = Quaternion.LookRotation(TargetDirection);
+        Quaternion PlayerRotation = Quaternion.Slerp(transform.rotation, TargetRotation, PlayerManager.Instance.RotationSpeed);
+
+        transform.rotation = PlayerRotation;
     }
 }
