@@ -4,19 +4,16 @@ using UnityEngine;
 
 public class PlayerAnimation : MonoBehaviour
 {
+    int Horizontal, Vertical;
 
-    public Animator PlayerAnim;
-
-
-    // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
-        PlayerAnim = GetComponentInChildren<Animator>();
+        Horizontal = Animator.StringToHash("Horizontal");
+        Vertical = Animator.StringToHash("Vertical");
     }
-
-    // Update is called once per frame
-    void Update()
+    public void UpdateAnimatorValues(float HorizontalMovement, float VerticalMovement)
     {
-        
+        PlayerManager.Instance.AnimatorPlayer.SetFloat(Horizontal, HorizontalMovement, 0.1f, Time.deltaTime);
+        PlayerManager.Instance.AnimatorPlayer.SetFloat(Horizontal, HorizontalMovement, 0.1f, Time.deltaTime);
     }
 }

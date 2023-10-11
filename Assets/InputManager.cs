@@ -9,6 +9,8 @@ public class InputManager : MonoBehaviour
     public float VerticalInput;
     public float HorizontalInput;
 
+    public float MovementAmount;
+
     // Start is called before the first frame update
     private void OnEnable()
     {
@@ -36,5 +38,8 @@ public class InputManager : MonoBehaviour
     {
         VerticalInput = MovementInput.y;
         HorizontalInput = MovementInput.x;
+
+        MovementAmount = Mathf.Clamp01(Mathf.Abs(HorizontalInput + VerticalInput));
+        PlayerManager.Instance.PlayerAnim.UpdateAnimatorValues(0, MovementAmount);
     }
 }

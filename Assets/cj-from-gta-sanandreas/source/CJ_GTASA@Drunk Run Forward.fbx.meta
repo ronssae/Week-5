@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 67d17d241f3009146a258aeba2ad868b
+guid: 89201ac4654151f44b423aa3a9c13f47
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -16,8 +16,7 @@ ModelImporter:
     optimizeGameObjects: 0
     removeConstantScaleCurves: 0
     motionNodeName: 
-    rigImportErrors: "Invalid Avatar Rig Configuration. Missing or invalid transform:\n\tRequired
-      human bone 'Hips' not found\n"
+    rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
     animationImportWarnings: 
@@ -78,46 +77,12 @@ ModelImporter:
     legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
     blendShapeNormalImportMode: 1
     normalSmoothingSource: 0
-  referencedClips:
-  - 399e10b8af1c349459c677ef96ee2988
-  - 89201ac4654151f44b423aa3a9c13f47
-  - d361e3bcab41f6d48bd34f131e53c12a
-  - c0f3dc86906d4504c9f4736ce4b8a23c
+  referencedClips: []
   importAnimation: 1
   humanDescription:
     serializedVersion: 3
     human: []
-    skeleton:
-    - name: CJ_GTASA(Clone)
-      parentName: 
-      position: {x: 0, y: 0, z: 0}
-      rotation: {x: 0, y: 0, z: 0, w: 1}
-      scale: {x: 1, y: 1, z: 1}
-    - name: CJ_GTASA:Hands
-      parentName: CJ_GTASA(Clone)
-      position: {x: -0, y: 0.010661915, z: 0}
-      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: CJ_GTASA:Head
-      parentName: CJ_GTASA(Clone)
-      position: {x: -0, y: 0.010661915, z: 0}
-      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: CJ_GTASA:Torso
-      parentName: CJ_GTASA(Clone)
-      position: {x: -0, y: 0.010661915, z: 0}
-      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: CJ_GTASA:Feet
-      parentName: CJ_GTASA(Clone)
-      position: {x: -0, y: 0.010661915, z: 0}
-      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
-    - name: CJ_GTASA:Pants
-      parentName: CJ_GTASA(Clone)
-      position: {x: -0, y: 0.010661915, z: 0}
-      rotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-      scale: {x: 1, y: 1, z: 1}
+    skeleton: []
     armTwist: 0.5
     foreArmTwist: 0.5
     upperLegTwist: 0.5
