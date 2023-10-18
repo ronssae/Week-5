@@ -13,6 +13,7 @@ public class PlayerAnimation : MonoBehaviour
     }
     public void UpdateAnimatorValues(float HorizontalMovement, float VerticalMovement)
     {
+        if (PlayerManager.Instance.PlayerIsSprinting) {HorizontalMovement = 2;}
         PlayerManager.Instance.AnimatorPlayer.SetFloat(Horizontal, HorizontalMovement, 0.1f, Time.deltaTime);
         PlayerManager.Instance.AnimatorPlayer.SetFloat(Horizontal, HorizontalMovement, 0.1f, Time.deltaTime);
     }

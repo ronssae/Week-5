@@ -227,6 +227,7 @@ MonoBehaviour:
   VerticalInput: 1
   HorizontalInput: 1
   MovementAmount: 0
+  Sprint_Input: 0
 --- !u!114 &84109232
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -277,12 +278,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 919132149155446097, guid: 399e10b8af1c349459c677ef96ee2988, type: 3}
-  AnimatorPlayer: {fileID: 0}
-  RigidBody: {fileID: 0}
-  inputManager: {fileID: 0}
-  PlayerAnim: {fileID: 0}
-  MovementSpeed: 0
-  RotationSpeed: 0
+  AnimatorPlayer: {fileID: 1198083095}
+  RigidBody: {fileID: 84109229}
+  inputManager: {fileID: 84109231}
+  locomotionPlayer: {fileID: 84109232}
+  PlayerAnim: {fileID: 84109234}
+  MovementSpeed: 10
+  RotationSpeed: 10
+  PlayerIsSprinting: 0
+  PlayerIsWalking: 0
+  PlayerIsJumping: 0
 --- !u!4 &139934275 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 399e10b8af1c349459c677ef96ee2988,
@@ -322,9 +327,13 @@ MonoBehaviour:
   AnimatorPlayer: {fileID: 0}
   RigidBody: {fileID: 0}
   inputManager: {fileID: 0}
+  locomotionPlayer: {fileID: 0}
   PlayerAnim: {fileID: 0}
   MovementSpeed: 1
   RotationSpeed: 1
+  PlayerIsSprinting: 0
+  PlayerIsWalking: 0
+  PlayerIsJumping: 0
 --- !u!4 &207228211
 Transform:
   m_ObjectHideFlags: 0
@@ -485,7 +494,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cb57c0cdeb7d9e244b363e92af831017, type: 3}
   m_Name: 
@@ -569,13 +578,13 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 399e10b8af1c349459c677ef96ee2988,
         type: 3}
       propertyPath: m_Name
-      value: CJ_GTASA@Belly Dance
+      value: CJ
       objectReference: {fileID: 0}
     - target: {fileID: 5866666021909216657, guid: 399e10b8af1c349459c677ef96ee2988,
         type: 3}
       propertyPath: m_Avatar
       value: 
-      objectReference: {fileID: 9000000, guid: d361e3bcab41f6d48bd34f131e53c12a, type: 3}
+      objectReference: {fileID: 9000000, guid: 89201ac4654151f44b423aa3a9c13f47, type: 3}
     - target: {fileID: 5866666021909216657, guid: 399e10b8af1c349459c677ef96ee2988,
         type: 3}
       propertyPath: m_Controller
@@ -864,6 +873,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1198083095 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 5866666021909216657, guid: 399e10b8af1c349459c677ef96ee2988,
+    type: 3}
+  m_PrefabInstance: {fileID: 339979682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

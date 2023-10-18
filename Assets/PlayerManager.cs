@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     [Header("Player Scripts")]
     //PlayerScripts
     public InputManager inputManager;
-    PlayerLocomotion locomotionPlayer;
+    public PlayerLocomotion locomotionPlayer;
     public PlayerAnimation PlayerAnim;
 
     [Header("Player Stats")]
@@ -24,6 +24,11 @@ public class PlayerManager : MonoBehaviour
     public float MovementSpeed;
     [Range(0, 500)]
     public float RotationSpeed;
+
+    [Header("Action Status")]
+    public bool PlayerIsSprinting;
+    public bool PlayerIsWalking;
+    public bool PlayerIsJumping;
 
     // Start is called before the first frame update
     private void Awake()
